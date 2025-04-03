@@ -3,26 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-.secondarygray {
-  color: #232323;
-}
-
-.borderColorGray {
-  border-color: #232323;
-}
-
-.gradient-border {
-  background: #3e3e3e; /* Background color */
-  position: relative;
-  padding: 10px; /* Space between content and inner border */
-  border: 2px solid #232323; /* Outer border, darker than #3e3e3e but not black */
-  border-radius: 8px; /* Optional: slight rounding */
-  backdrop-filter: blur(5px); /* Background blur effect */
-  -webkit-backdrop-filter: blur(5px); /* For Safari support */
-
-  /* Inner gradient border using pseudo-element */
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
