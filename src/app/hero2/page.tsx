@@ -23,11 +23,12 @@ export default function Web3Innovation() {
           </AnimatedShinyText>
         </div>
       </div>
-      <div className="flex flex gap-8 row-start-2 items-center sm:items-start">
+
+      <div className="flex flex-col md:flex-row gap-8 row-start-2 items-center sm:items-start">
         {/* Left Section */}
         <div className="flex-1 text-center lg:text-left">
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            Using Open Source <br /> Web3 Innovation
+            Using Open Source and <br /> Web3 Innovation
           </h1>
           <p className="mt-4 text-lg md:text-xl text-gray-400">
             Helping you navigate web3 complexities and turn your ideas into
@@ -37,7 +38,7 @@ export default function Web3Innovation() {
 
         {/* Center Placeholder (Gray Square) */}
         {/* TODO add glow here */}
-        <div className="flex-1 flex items-center justify-center mt-25">
+        <div className="flex-1 flex items-center justify-center lg:mt-25 sm:5">
             <div className="w-96 h-[600px] md:w-96 md:h-[600px] bg-gray-300 opacity-80 rounded-sm shadow-2xl"></div>
         </div>
 
@@ -45,7 +46,7 @@ export default function Web3Innovation() {
         <div className="flex-1 text-center lg:text-left flex-col">
           {/* <div className="p-25">re</div> */}
 
-          <div className="flex-1 text-center lg:text-left mt-75">
+          <div className="flex-1 text-center lg:text-left lg:mt-75">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               To Empower <br /> The Future
             </h1>

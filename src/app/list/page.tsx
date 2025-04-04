@@ -82,7 +82,7 @@ const cardItems: CardItem[] = [
 ];
 
 export default function CardListWithPreview() {
-  // State to track the currently hovered card
+  // State to track the currently hovered/clicked card (desktop only)
   const [hoveredCard, setHoveredCard] = useState<CardItem | null>(null);
 
   return (
@@ -96,29 +96,58 @@ export default function CardListWithPreview() {
       <div className="pb-5"></div>
 
       <div className="grid grid-cols-1 md:grid-cols-13 gap-6">
-        {/* Left side - Text list with separators (takes 6/13 of the space) */}
-        <div className="md:col-span-6 space-y-2">
-          {cardItems.map((item, index) => (
-            <div key={item.id}>
+        {/* Left side - Carousel on mobile, list on desktop */}
+        <div className="md:col-span-6">
+          {/* Mobile carousel */}
+          <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory scrollbar-hide space-x-4 bg-primary">
+            {cardItems.map((item) => (
               <div
-                className="cursor-pointer transition-all hover:text-primary py-2"
-                onMouseEnter={() => setHoveredCard(item)}
-                onClick={() => setHoveredCard(item)}
+                key={item.id}
+                className="snap-start flex-shrink-0 w-[85%] p-4 rounded-lg border"
               >
                 <h3 className="text-2xl font-bold">{item.title}</h3>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-muted-foreground mt-1">
                   {item.description}
                 </p>
+                <p className="mt-2 text-sm">{item.content}</p>
+                <div className="mt-4 relative w-full h-[200px]">
+                  <Image
+                    src={item.imageUrl || "/placeholder.svg"}
+                    alt={item.title}
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
               </div>
-              {index < cardItems.length - 1 && <Separator className="my-2" />}
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Desktop list */}
+          <div className="hidden md:block space-y-2">
+            {cardItems.map((item, index) => (
+              <div key={item.id}>
+                <div
+                  className="cursor-pointer transition-all hover:text-primary py-2"
+                  onMouseEnter={() => setHoveredCard(item)}
+                  onClick={() => setHoveredCard(item)}
+                >
+                  <h3 className="text-2xl font-bold">{item.title}</h3>
+                  <p className="text-xs text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
+                {index < cardItems.length - 1 && (
+                  <Separator className="my-2" />
+                )}
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Right side - Preview (takes 7/13 of the space) */}
-        <div className="md:col-span-7 rounded-lg border p-6 h-[665px] flex items-center justify-center">
+        {/* Right side - Preview (desktop only, 7/13 of the space) */}
+        <div className="hidden md:col-span-7 md:flex rounded-lg border p-6 h-[665px] items-center justify-center">
           {hoveredCard ? (
-            <div className="flex flex-col grid gap-6 md:grid-cols-1 w-full h-full">
+            <div className="flex flex-col gap-6 w-full h-full">
               <div className="space-y-4">
                 <h2 className="text-6xl font-bold">{hoveredCard.title}</h2>
                 <p className="text-muted-foreground text-2xl">
