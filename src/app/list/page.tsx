@@ -96,15 +96,12 @@ export default function CardListWithPreview() {
       <div className="pb-5"></div>
 
       <div className="grid grid-cols-1 md:grid-cols-13 gap-6">
-        {/* Left side - Carousel on mobile, list on desktop */}
+        {/* Left side - Vertical scrollable list on mobile, list on desktop */}
         <div className="md:col-span-6">
-          {/* Mobile carousel */}
-          <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory scrollbar-hide space-x-4 bg-primary">
+          {/* Mobile vertical scrollable list */}
+          <div className="md:hidden overflow-y-auto max-h-[80vh] space-y-4">
             {cardItems.map((item) => (
-              <div
-                key={item.id}
-                className="snap-start flex-shrink-0 w-[85%] p-4 rounded-lg border"
-              >
+              <div key={item.id} className="p-4 rounded-lg border">
                 <h3 className="text-2xl font-bold">{item.title}</h3>
                 <p className="text-xs text-muted-foreground mt-1">
                   {item.description}
@@ -155,7 +152,7 @@ export default function CardListWithPreview() {
                 </p>
                 <p>{hoveredCard.content}</p>
                 <div className="flex items-center justify-center">
-                  <div className="relative w-[600px] h-[400px]">
+                  <div className="relative w-[750px] h-[430px]">
                     <Image
                       src={hoveredCard.imageUrl || "/placeholder.svg"}
                       alt={hoveredCard.title}
