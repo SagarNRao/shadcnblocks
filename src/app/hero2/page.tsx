@@ -6,6 +6,7 @@ import { BellIcon, Share2Icon } from "lucide-react";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
+import { Particles } from "@/components/magicui/particles";
 
 export default function Web3Innovation() {
   return (
@@ -35,8 +36,9 @@ export default function Web3Innovation() {
         </div>
 
         {/* Center Placeholder (Gray Square) */}
+        {/* TODO add glow here */}
         <div className="flex-1 flex items-center justify-center mt-25">
-          <div className="w-96 h-[600px] md:w-96 md:h-[600px] bg-gray-300 opacity-80 rounded-sm"></div>
+            <div className="w-96 h-[600px] md:w-96 md:h-[600px] bg-gray-300 opacity-80 rounded-sm shadow-2xl"></div>
         </div>
 
         {/* Right Section */}
@@ -52,6 +54,9 @@ export default function Web3Innovation() {
               practical solutions.
             </p>
           </div>
+        </div>
+        <div className="absolute inset-0 -z-10">
+          <Particles quantity={500} ease={80} color={"#ffffff"} refresh />
         </div>
       </div>
     </div>

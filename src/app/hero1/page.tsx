@@ -4,6 +4,8 @@ import { cn } from "@/lib/utils";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
+import { Meteors } from "@/components/magicui/meteors";
+import { Particles } from "@/components/magicui/particles";
 
 const features = [
   {
@@ -79,6 +81,9 @@ export default function Page() {
               />
             ))}
           </BentoGrid>
+        </div>
+        <div className="absolute inset-0 -z-10">
+          <Particles quantity={500} ease={80} color={"#ffffff"} refresh />
         </div>
       </main>
     </div>
