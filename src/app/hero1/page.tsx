@@ -67,7 +67,7 @@ export default function Page() {
       <main className="flex flex-col gap-8 items-center max-w-7xl mx-auto">
         <div className="w-full">
           <h1 className="text-4xl md:text-6xl lg:text-9xl font-bold text-center md:text-left">
-            Build, Collaborate
+            Impact, Innovate
           </h1>
           <h1 className="text-4xl md:text-6xl lg:text-9xl font-bold text-center md:text-left">
             and Transform
