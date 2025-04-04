@@ -12,8 +12,8 @@ export default function Footer() {
           background="transparent"
           minSize={0.4}
           maxSize={1}
-          speed={1}
-          particleDensity={1200}
+          speed={0.2}
+          particleDensity={800}
           className="w-screen h-full"
           particleColor="#FFFFFF"
         />
