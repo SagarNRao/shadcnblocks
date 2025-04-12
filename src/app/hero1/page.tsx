@@ -15,7 +15,7 @@ const features = [
     href: "#",
     cta: "Learn more",
     // On mobile: full width (col-span-2), on md+: takes 2 columns and full height
-    className: "col-span-2 md:col-span-2 md:row-span-2 h-40 md:h-full",
+    className: "col-span-2 md:col-span-2 md:row-span-2 h-40 md:h-full text-2xl",
     background: (
       <div className="absolute inset-0 bg-gradient-to-gray from-black-100 to-black-200 opacity-50" />
     ),
@@ -41,7 +41,7 @@ const features = [
     // On mobile: takes 1 column, on md+: takes 1 column
     className: "col-span-1 md:col-span-1 h-40 md:h-full",
     background: (
-      <div className="absolute inset-0 bg-gradient-to-gray from-black-100 to-black-200 opacity-50" />
+      <div className="absolute inset-0 bg-gradient-to-gray from-black-100 to-black-200 opacity-" />
     ),
   },
 ];
@@ -66,17 +66,21 @@ export default function Page() {
       {/* Main Content */}
       <main className="flex flex-col gap-8 items-center max-w-7xl mx-auto">
         <div className="w-full">
-          <h1 className="text-4xl md:text-6xl lg:text-9xl font-bold text-center md:text-left">
+          <h1 className="text-4xl md:text-6xl lg:text-9xl sm:text-4xl font-bold text-center md:text-left">
             Impact, Innovate
           </h1>
-          <h1 className="text-4xl md:text-6xl lg:text-9xl font-bold text-center md:text-left">
+          <h1 className="text-4xl md:text-6xl lg:text-9xl font-bold text-center md:text-left sm:text-4xl">
             and Transform
           </h1>
 
-          <div className="pb-4"></div>
+          <div className="lg:p-0 sm:p-1"></div>
 
           {/* BentoGrid with responsive layout */}
-          <BentoGrid className="w-full grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[166px] md:auto-rows-[166px] ">
+          <BentoGrid
+            className={cn(
+              "w-full grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-2 md:gap-4 auto-rows-[166px] md:auto-rows-[166px]"
+            )}
+          >
             {features.map((feature, idx) => (
               <BentoCard
                 key={idx}
