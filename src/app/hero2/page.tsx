@@ -23,9 +23,9 @@ export default function Web3Innovation() {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row lg:flex-row p-20 gap-8 lg:gap-12 sm:gap-5">
+      <div className="flex flex-col md:flex-row lg:flex-row p-4 sm:p-8 md:p-12 lg:p-20 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
         {/* Left Section */}
-        <div className="flex-1 text-center md:text-left mb-8 lg:mb-0">
+        <div className="flex-1 text-center md:text-left mb-4 sm:mb-6 md:mb-8 lg:mb-0">
           <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
         Using Open Source and <br /> Web3 Innovation
           </h1>
@@ -36,13 +36,13 @@ export default function Web3Innovation() {
         </div>
 
         {/* Center Placeholder (Gray Square) */}
-        <div className="flex-1 flex items-center justify-center mb-8 lg:mb-0">
+        <div className="flex-1 flex items-center justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-0">
           <div className="w-48 h-72 sm:w-56 sm:h-80 md:w-64 md:h-96 lg:w-80 lg:h-[28rem] xl:w-96 xl:h-[36rem] bg-gray-300 opacity-80 rounded-sm shadow-2xl"></div>
         </div>
 
         {/* Right Section */}
         <div className="flex-1 text-center md:text-left">
-          <div className="pb-0 lg:pb-50"></div>
+          <div className="pb-0 lg:pb-50 md:pb-50"></div>
           <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight lg:pt-20">
         To Empower <br /> The Future
           </h1>
